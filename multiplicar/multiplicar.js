@@ -12,12 +12,11 @@ let listarTabla = (base, limite = 10) => {
       return;
     }
 
-    let data;
+    let data = '';
 
     console.log('==================='.green);
     console.log(`Tabla del ${base}`.green);
     console.log('==================='.green);
-
 
     for (let i = 1; i <= limite; i++) {
       data += `${base} * ${i} = ${base * i}\n`;
@@ -45,10 +44,14 @@ let crearArchivo = (base, limite = 10) => {
     }
 
     fs.writeFile(`tablas/tabla-${base}.txt`, data, (err) => {
-      if (err)
+      if (err) { 
+        console.log('====================================');
+        console.log(`Something went wrong ${err}`);
+        console.log('====================================');
         reject(err);
-      else
+      } else {
         resolve(`tabla-${base}.txt`);
+      }
     });
   });
 }
