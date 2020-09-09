@@ -15,7 +15,7 @@ let listarTabla = (base, limite = 10) => {
     let data = '';
 
     console.log('==================='.green);
-    console.log(`Tabla del ${base}`.green);
+    console.log(`Esta es la tabla del ${base}`.green);
     console.log('==================='.green);
 
     for (let i = 1; i <= limite; i++) {
